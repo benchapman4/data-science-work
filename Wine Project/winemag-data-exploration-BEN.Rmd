@@ -1,0 +1,53 @@
+
+
+--
+title: "Explore-WineReviews-BEN"
+author: "Ben Chapman"
+date: 2020-08-04
+output:
+  github_document:
+    toc: true
+---
+
+*Purpose*: To create an effective visualization, we need to keep our *purpose* firmly in mind. There are many different ways to visualize data, and the only way we can judge efficacy is with respect to our purpose.
+
+In this challenge you'll visualize the same data in two different ways, aimed at two different purposes.
+
+
+```{r setup}
+library(tidyverse)
+library(ggrepel)
+
+```
+
+
+```{r load}
+## NOTE: If you extracted all challenges to the same location,
+## you shouldn't have to change this filename
+filename <- "winemag-data-130k-v2.csv"
+
+## Load the data
+df_wine <- read_csv(filename)
+```
+```{r load}
+df_wine %>% 
+  ggplot()+
+  geom_point(aes(x = price, y = points))
+```
+
+```{r load}
+
+df_wine %>% 
+  ggplot()+
+  geom_histogram(aes( x = points, binwidth = 5, edge =90))
+```
+
+```{r load}
+
+summary(df_wine)
+glimpse(df_wine)
+```
+```{r load}
+
+
+```
